@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <style>
+        #name{
+            
+        }
+        #email{
 
+        }
+        #phone{
+
+        }
+        #gender{
+            margin-left: -105px;
+        }
+        #submit{
+            margin-left: -55px;
+        }
+        #reset{
+
+        }
+        </style>
+    </head>
+    <body>
+            <form>
+                <br><br>
+                <div align="center">
+                    <input id="name" type="text" placeholder="Name">
+                    <br><br>
+                    <input id="email" type="text" placeholder="Email ID">
+                    <br><br>
+                    <input id="phone" type="text" placeholder="Phone Number">
+                    <br><br>
+                    <select id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <br><br>
+                    <input id="submit" type="submit" onclick="myFunction()">
+                    &nbsp;&nbsp;
+                    <input id="reset" type="reset">
+                    <script>
+                        function myFunction(){
+                            alert("Name: "+document.getElementById("name").value+"    Email ID: "+document.getElementById("email").value+"    Phone Number: "+document.getElementById("phone").value+"   Gender: "+document.getElementById("gender").value)
+                        }
+                    </script>
+                </div>
+            </form>
+    </body>
+</html>
