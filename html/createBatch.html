@@ -1,0 +1,166 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset = "ISO-8859-1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>
+Create Batch Details
+</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+#bdy{
+background-image:url("images.jpg");
+background-repeat: no-repeat;
+  background-size: cover;
+}
+.card{
+	border-color:black;
+	margin-top:100px;
+	border-radius:20px;
+}
+#job_name{
+border-color:black;
+border-radius:15px;
+}
+#description{
+border-color:black;
+border-radius:15px;
+}
+#exe_name{
+border-color:black;
+border-radius:15px;
+}
+#exe_path{
+border-color:black;
+border-radius:15px;
+}
+#log_file_name{
+border-color:black;
+border-radius:15px;
+}
+#log_file_location{
+border-color:black;
+border-radius:15px;
+}
+#btn1{
+border-radius:15px;
+border-color:black;
+width:80px;
+background-color:white;
+}
+#btn2{
+border-radius:15px;
+border-color:black;
+width:80px;
+background-color:white;
+}
+#error_name{
+color:red;
+}
+#error_description{
+color:red;
+}
+#error_exe_name{
+color:red;
+}
+#error_exe_path{
+color:red;
+}
+#error_log_file_name{
+color:red;
+}
+#error_log_file_location{
+color:red;
+}
+
+
+
+</style>
+
+<body id="bdy">
+<div class="bg-image"></div>
+
+<div class="bg-text">
+<div class="container">
+	<div class ="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-5">
+			<div class="card" id="card1">
+				<div class="card-body">
+					<form novalidate>
+						<h2>Create a Batch Details</h2><br>
+						<div class="form-group">
+							<label for="job_name" id="jobname">Job Name</label>
+							<input type="text" id="job_name" class="form-control" minlength="5" maxlength="30" onblur="myBlur(this.id,'error_name','jobname')" onfocus="myFocus(this.id,'error_name')" >
+						</div>
+						<div id="error_name"></div>
+						<div class="form-group">
+							<label for="description" id="desc">Description</label>
+							<textarea id="description" class="form-control" minlength="10" maxlength="200" onblur="myBlur(this.id,'error_description','desc')" onfocus="myFocus(this.id,'error_description')"></textarea>
+						</div>
+						<div id="error_description"></div>
+						<div class="form-group">
+							<label for="exe_name" id="exename">Executabel Name</label>
+							<input type="text" id="exe_name" class="form-control" minlength="5" maxlength="35" onblur="myBlur(this.id,'error_exe_name','exename')" onfocus="myFocus(this.id,'error_exe_name')">
+						</div>
+						<div id="error_exe_name"></div>
+						<div class="form-group">
+							<label for="exe_path" id="exepath">Executable Path</label>
+							<input type="text" id="exe_path" class="form-control" minlength="10" maxlength="100" onblur="myBlur(this.id,'error_exe_path','exepath')" onfocus="myFocus(this.id,'error_exe_path')">
+						</div>
+						<div id="error_exe_path"></div>
+						<div class="form-group">
+							<label for="log_file_name" id="logname">Log File Name</label>
+							<input type="text" id="log_file_name" class="form-control" minlength="5" maxlength="20" onblur="myBlur(this.id,'error_log_file_name','logname')" onfocus="myFocus(this.id,'error_log_file_name')">
+						</div>
+						<div id="error_log_file_name"></div>
+						<div class="form-group">
+							<label for="log_file_location" id="loglocation">Log File Location</label>
+							<input type="text" id="log_file_location" class="form-control" minlength="10" maxlength="100" onblur="myBlur(this.id,'error_log_file_location','loglocation')" onfocus= myFocus(this.id,'error_log_file_location')">
+						</div>
+						<div id="error_log_file_location"></div>
+							<button onclick="myFunction()" id="btn1">Submit</button>
+							<button onclick="myReset()" id="btn2">Reset</button>
+					</form>
+					<script>
+					function myBlur(input,error,label){
+					var input1 = document.getElementById(input);
+					var error1 = document.getElementById(error);
+					var input11 = input1.value.length;
+					
+					if(input11==0 && input1.getAttribute("minlength")!=null){
+						
+						error1.innerHTML = "Please enter valid "+document.getElementById(label).textContent;
+					}
+					else if((input1.getAttribute("minlength")>input11 && input1.getAttribute("minlength")!=null) || (input1.getAttribute("maxlength") < input11 && input1.getAttribute("maxlength")!=null)){
+						
+						
+						error1.innerHTML = "Text Should be of length between "+input1.getAttribute("minlength")+" to "+ input1.getAttribute("maxlength")+" character.";
+					}	
+					else{
+						error1.innerHTML="";
+}
+					}
+					function myFocus(input,error){
+
+var error1 = documnet.getElement.ById(error);
+					
+error1.innerHTML = "";
+					}
+
+
+					
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

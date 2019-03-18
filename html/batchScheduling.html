@@ -1,0 +1,165 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset = "ISO-8859-1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>
+Create Batch Scheduling
+</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<style>
+#bdy{
+	background: url("images.jpg") top center no-repeat;
+background-size:cover;
+}
+#card1{
+	border-color: black;
+	margin-top:200px;
+	border-radius:15px;
+	background-color: white;
+	
+}
+#error_name{
+color:red;
+}
+#error_run_days{
+color:red;
+}
+#error_max_duration{
+color:red;
+}
+#server_name{
+border-radius:15px;
+border-color:black;
+background-color:white;
+}
+#basic{
+width:500px;
+}
+#max_duration{
+border-radius:15px;
+border-color:black;
+}
+#dependency{
+border-radius:15px;
+border-color:black;
+}
+#btn1{
+border-radius:15px;
+border-color:black;
+width:80px;
+background-color:white;
+}
+#btn2{
+border-radius:15px;
+border-color:black;
+width:80px;
+background-color:white;
+}
+</style>
+
+<body id="bdy">
+
+<div class="container">
+	<div class ="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-5">
+			<div class="well" id="card1">
+				<div class="bg-image"></div>
+					<form novalidate>
+						<h2>Create a Batch Scheduling</h2><br>
+						<div class="form-group">
+							<label for="server_name" id="servername">Server Name</label>
+							<input type="text" id="server_name" class="form-control" minlength="5" maxlength="20" onblur="myBlur(this.id,'error_name','servername')" onfocus="myFocus(this.id,'error_name')" >
+						</div>
+						<div id="error_name"></div>
+						<div class="form-group">
+                                <label for="hours" id="timelabel">Run Days</label>
+                                <div class="input-group" id="timelabel">
+                                   
+                                     <select class="custom-select" multiple="multiple" id="basic">
+  <option>Monday</option>
+  <option>Tuesday</option>
+  <option>Wednesday</option>
+  <option>Thursday</option>
+  <option>Friday</option>
+  <option>Saturday</option>
+  <option>Sunday</option>
+</select>
+
+<script>$('#basic').multiselect({
+    templates: {
+        li: '<li><a href="javascript:void(0);"><label class="pl-2" style="color:black"></label></a></li>'
+    },
+     includeSelectAllOption : true,
+    nonSelectedText: 'Select a name...'
+});
+</script>
+                                  
+                                   
+                                
+                                
+              </div>	
+
+  
+ 
+						</div>
+						<div id="error_run_days"></div>
+						<div class="form-group">
+							<label for="max_duration" id="maxduration">Max Duration</label>
+							<input type="text" id="max_duration" class="form-control" minlength="1" onblur="myBlur(this.id,'error_max_duration','maxduration')" onfocus="myFocus(this.id,'error_max_duration')">
+						</div>
+						<div id="error_max_duration"></div>
+						<div class="form-group">
+							<label for="dependency" id="depen">Dependency</label>
+							<input type="text" id="dependency" class="form-control" onblur="myBlur(this.id,'error_dependency','depen')" onfocus="myFocus(this.id,'error_dependency')">
+						</div>
+						<div id="error_dependency"></div>
+						
+							<button onclick="myFunction()" id="btn1">Submit</button>&nbsp;&nbsp;
+							<button onclick="myReset()" id="btn2">Reset</button>
+					</form>
+					<script>
+					function myBlur(input,error,label){
+					var input1 = document.getElementById(input);
+					var error1 = document.getElementById(error);
+					var input11 = input1.value.length;
+					
+					if(input11==0 && input1.getAttribute("minlength")!=null){
+						
+						error1.innerHTML = "Please enter valid "+document.getElementById(label).textContent;
+					}
+					else if((input1.getAttribute("minlength")>input11 && input1.getAttribute("minlength")!=null) || (input1.getAttribute("maxlength") < input11 && input1.getAttribute("maxlength")!=null)){
+						
+						
+						error1.innerHTML = "Text Should be of length between "+input1.getAttribute("minlength")+" to "+ input1.getAttribute("maxlength")+" character.";
+					}	
+					else{
+						error1.innerHTML="";
+}
+
+}
+					
+					function myFocus(input,error){
+
+var error1 = documnet.getElement.ById(error);
+					
+error1.innerHTML = "";
+					}
+					</script>
+	
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
