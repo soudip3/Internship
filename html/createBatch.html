@@ -14,13 +14,11 @@ Create Batch Details
 </head>
 <style>
 #bdy{
-background-image:url("images.jpg");
-background-repeat: no-repeat;
-  background-size: cover;
+background-color: whitesmoke;
 }
 .card{
 	border-color:black;
-	margin-top:100px;
+	margin-top: 40px;
 	border-radius:20px;
 }
 #job_name{
@@ -93,7 +91,7 @@ color:red;
 			<div class="card" id="card1">
 				<div class="card-body">
 					<form novalidate>
-						<h2>Create a Batch Details</h2><br>
+						<h2>Create a Batch Details</h2>
 						<div class="form-group">
 							<label for="job_name" id="jobname">Job Name</label>
 							<input type="text" id="job_name" class="form-control" minlength="5" maxlength="30" onblur="myBlur(this.id,'error_name','jobname')" onfocus="myFocus(this.id,'error_name')" >
